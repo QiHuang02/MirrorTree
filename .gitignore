@@ -15,3 +15,7 @@ realms_*
 user*.json
 command_history.txt
 Dramatic Skys Demo
+test.*
+emi.json
+/kubejs/assets/emendatusenigmatica/models/block/*.json
+/kubejs/data/emendatusenigmatica/loot_table/blocks/*.json

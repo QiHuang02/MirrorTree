@@ -1,4 +1,4 @@
-// priority: 200
+// priority: 199
 
 global.modid = 'emendatusenigmatica';
 
@@ -107,5 +107,38 @@ const OreLootJson = (block, item, sequence, min, max) => ({
       ],
     "random_sequence": sequence
 });
+
+function createModelOre(name, strata) {
+    let model = JsonIO.read(`${paths.models.block}${name}_ore_${strata}.json`) || {};
+    if(model.parent === undefined) {
+        console.log(`No block model found, creating new: ${name}_ore_${strata}.json`);
+        JsonIO.write(
+            `${paths.models.block}${name}_ore_${strata}.json`,
+            OreModelJson(
+                global.EE_STRATAS[strata].texture,
+                `emendatusenigmatica:block/overlays/ore/${name}`
+            )
+        )
+    }
+};
+
+function createLootOre(name, strata, drop) {
+    let loot = JsonIO.read(`${paths.loots.block}${name}_ore_${strata}.json`) || {};
+    if (loot.type === undefined) {
+        console.log(`No block loot table found, creating new: ${name}_ore_${strata}.json`);
+        let min = parseInt(drop.min);
+        let max = parseInt(drop.max);
+        JsonIO.write(
+            `${paths.loots.block}${name}_ore_${strata}.json`,
+            OreLootJson(
+                `emendatusenigmatica:${name}_ore_${strata}`,
+                `${drop.item}`,
+                `emendatusenigmatica:blocks/${name}_ore_${strata}`,
+                min,
+                max
+            )
+        )
+    }
+};
 
 Platform.setModName(`${global.modid}`, 'Emendatus Enigmatica');
