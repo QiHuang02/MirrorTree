@@ -1,0 +1,15 @@
+
+.probe
+.vscode
+/downloads
+/local
+/logs
+MirrorTree*
+/mods
+patchouli_*
+/PCL
+resourcepacks
+saves
+simplebackups
+realms_*
+user*.json
