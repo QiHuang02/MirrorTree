@@ -50,6 +50,13 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
+  "jade_access": {
+    "held_item": true,
+    "sign": true,
+    "block": true,
+    "entity": true,
+    "entity_variant": true
+  },
   "mekanism": {
     "chemical": true,
     "remove_builtin": true,
