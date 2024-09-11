@@ -1,6 +1,6 @@
 // priority: 197
 
-let commonStratas = ['stone', 'deepslate', 'netherrack', 'end_stone'];
+let commonStratas = ['andesite', 'diorite', 'granite' ,'stone', 'deepslate', 'netherrack', 'end_stone'];
 let vanillaComplementStratas = ['netherrack', 'end_stone'];
 
 /**

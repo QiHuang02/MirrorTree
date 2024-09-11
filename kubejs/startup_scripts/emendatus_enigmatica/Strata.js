@@ -9,6 +9,30 @@ global.EE_STRATAS = {
         resistance: 6,
         tool: 'pickaxe'
     },
+    andesite: {
+        name: 'andesite',
+        texture: 'minecraft:block/andesite',
+        fill: 'minecraft:andesite',
+        hardness: 1.5,
+        resistance: 6,
+        tool: 'pickaxe'
+    },
+    diorite: {
+        name: 'diorite',
+        texture: 'minecraft:block/diorite',
+        fill: 'minecraft:diorite',
+        hardness: 1.5,
+        resistance: 6,
+        tool: 'pickaxe'
+    },
+    granite: {
+        name: 'granite',
+        texture: 'minecraft:block/granite',
+        fill: 'minecraft:granite',
+        hardness: 1.5,
+        resistance: 6,
+        tool: 'pickaxe'
+    },
     deepslate: {
         name: 'deepslate',
         texture: 'minecraft:block/deepslate',
