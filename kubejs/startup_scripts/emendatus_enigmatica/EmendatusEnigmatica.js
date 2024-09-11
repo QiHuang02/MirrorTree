@@ -87,19 +87,9 @@ function registryOre(name, strata, harvestLevel, color, type, drop) {
             .tagBlock(`c:mineable/paxel`)
             .tagBlock(`minecraft:needs_${harvestLevel}_tool`)
             .tagBoth(`c:ores_in_ground/${strata}`)
-            if(color) {
-                // createModelOre(name, strata, type);
-                for (let i = 0; i < color.length; i++) {
-                    switch(type) {
-                        case 'metal':
-                            ore.texture(`layer${i}`, `${global.modid}:block/templates/ore/metal/0${i}`)
-                            break;
-                        case 'gem':
-                            ore.texture(`layer${i}`, `${global.modid}:block/templates/ore/gem/0${i}`)
-                            break;
-                    }
-                }
-            }
+            .modelGenerator(model => {
+                model.parent(`${global.EE_STRATAS[strata].texture}`)
+            })
             createLootOre(name, strata, drop);
         })
     })
@@ -118,13 +108,13 @@ function registryRaw(name, color) {
 
             if(color) {
                 for (let i = 0; i < color.length; i++) {
-                    builder.texture(`layer${i}`, `emendatusenigmatica:item/templates/raw/0${i}`)
+                    builder.texture(`layer${i}`, `${global.modid}:item/templates/raw/0${i}`)
                         .color(i, color[i]);
                 }
             }
     });
     StartupEvents.registry('block', (event) => {
-        let builder = event.create(`emendatusenigmatica:raw_${name}_block`)
+        let builder = event.create(`${global.modid}:raw_${name}_block`)
             .texture(`${global.modid}:block/overlays/raw_${name}_block`)
             .tagBoth('c:storage_blocks')
             .tagBoth(`c:storage_blocks/raw_${name}`)
@@ -148,7 +138,7 @@ function registryRaw(name, color) {
  */
 function registryWithBlock(type, name, color, burnTime, gemTemplate, processedTypes) {
     StartupEvents.registry('item', (event) => {
-        let builder = event.create(`emendatusenigmatica:${name}_${type}`)
+        let builder = event.create(`${global.modid}:${name}_${type}`)
             .tag(`c:${type}s`)
             .tag(`c:${type}s/${name}`)
 
@@ -157,14 +147,14 @@ function registryWithBlock(type, name, color, burnTime, gemTemplate, processedTy
                 switch(type) {
                     case 'ingot':
                         for (let i = 0; i < color.length; i++) {
-                            builder.texture(`layer${i}`, `emendatusenigmatica:item/templates/${type}/0${i}`)
+                            builder.texture(`layer${i}`, `${global.modid}:item/templates/${type}/0${i}`)
                             .color(i, color[i]);
                         };
                         break;
                     case 'gem':
                         if (gemTemplate > -1 && color) {
                         for (let i = 0; i < color.length; i++) {
-                            builder.texture(`layer${i}`, `emendatusenigmatica:item/templates/gem/template_${gemTemplate}/0${i}`)
+                            builder.texture(`layer${i}`, `${global.modid}:item/templates/gem/template_${gemTemplate}/0${i}`)
                             .color(i, color[i]);
                             }
                         };
@@ -175,7 +165,7 @@ function registryWithBlock(type, name, color, burnTime, gemTemplate, processedTy
     )
     if (processedTypes.includes('storage_block')){
         StartupEvents.registry('block', (event) => {
-            let builder = event.create(`emendatusenigmatica:${name}_block`)
+            let builder = event.create(`${global.modid}:${name}_block`)
                 .texture(`${global.modid}:block/overlays/${name}_block`)
                 .tagBoth('c:storage_blocks')
                 .tagBoth(`c:storage_blocks/${name}`)
@@ -204,7 +194,7 @@ function registryWithBlock(type, name, color, burnTime, gemTemplate, processedTy
  */
 function registryItem(type, name, color, burnTime) {
     StartupEvents.registry('item', (event) => {
-        let builder = event.create(`emendatusenigmatica:${name}_${type}`)
+        let builder = event.create(`${global.modid}:${name}_${type}`)
             .tag(`c:${type}s`)
             .tag(`c:${type}s/${name}`);
         
@@ -214,7 +204,7 @@ function registryItem(type, name, color, burnTime) {
             };
             if (color) {
                 for (let i = 0; i < color.length; i++) {
-                    builder.texture(`layer${i}`, `emendatusenigmatica:item/templates/${type}/0${i}`)
+                    builder.texture(`layer${i}`, `${global.modid}:item/templates/${type}/0${i}`)
                     .color(i, color[i]);
                 }
             }
@@ -224,20 +214,20 @@ function registryItem(type, name, color, burnTime) {
 
 function registryMek(name, color) {
     StartupEvents.registry('item', (event) => {
-        let crystal = event.create(`emendatusenigmatica:${name}_crystal`).tag('mekanism:crystals').tag(`mekanism:crystals/${name}`)
-        let shard = event.create(`emendatusenigmatica:${name}_shard`).tag('mekanism:shards').tag(`mekanism:shards/${name}`)
-        let clump = event.create(`emendatusenigmatica:${name}_clump`).tag('mekanism:clumps').tag(`mekanism:clumps/${name}`)
-        let dirtyDust = event.create(`emendatusenigmatica:${name}_dirty_dust`).tag('mekanism:dirty_dusts').tag(`mekanism:dirty_dusts/${name}`)
+        let crystal = event.create(`${global.modid}:${name}_crystal`).tag('mekanism:crystals').tag(`mekanism:crystals/${name}`)
+        let shard = event.create(`${global.modid}:${name}_shard`).tag('mekanism:shards').tag(`mekanism:shards/${name}`)
+        let clump = event.create(`${global.modid}:${name}_clump`).tag('mekanism:clumps').tag(`mekanism:clumps/${name}`)
+        let dirtyDust = event.create(`${global.modid}:${name}_dirty_dust`).tag('mekanism:dirty_dusts').tag(`mekanism:dirty_dusts/${name}`)
 
         if(color) {
             for (let i = 0; i < color.length; i++) {
-                crystal.texture(`layer${i}`, `emendatusenigmatica:item/templates/crystal/0${i}`)
+                crystal.texture(`layer${i}`, `${global.modid}:item/templates/crystal/0${i}`)
                 .color(i, color[i]);
-                shard.texture(`layer${i}`, `emendatusenigmatica:item/templates/shard/0${i}`)
+                shard.texture(`layer${i}`, `${global.modid}:item/templates/shard/0${i}`)
                 .color(i, color[i]);
-                clump.texture(`layer${i}`, `emendatusenigmatica:item/templates/clump/0${i}`)
+                clump.texture(`layer${i}`, `${global.modid}:item/templates/clump/0${i}`)
                 .color(i, color[i]);
-                dirtyDust.texture(`layer${i}`, `emendatusenigmatica:item/templates/dirty_dust/0${i}`)
+                dirtyDust.texture(`layer${i}`, `${global.modid}:item/templates/dirty_dust/0${i}`)
                 .color(i, color[i]);
             }
         }
@@ -246,14 +236,14 @@ function registryMek(name, color) {
 
 function registryBlood(name, color) {
     StartupEvents.registry('item', (event) => {
-        let fragment = event.create(`emendatusenigmatica:${name}_fragment`).tag('bloodmagic:fragments').tag(`bloodmagic:fragments/${name}`);
-        let gravel = event.create(`emendatusenigmatica:${name}_gravel`).tag('bloodmagic:gravels').tag(`bloodmagic:gravels/${name}`);
+        let fragment = event.create(`${global.modid}:${name}_fragment`).tag('bloodmagic:fragments').tag(`bloodmagic:fragments/${name}`);
+        let gravel = event.create(`${global.modid}:${name}_gravel`).tag('bloodmagic:gravels').tag(`bloodmagic:gravels/${name}`);
 
         if (color) {
             for (let i = 0; i < color.length; i++) {
-                fragment.texture(`layer${i}`, `emendatusenigmatica:item/templates/fragment/0${i}`)
+                fragment.texture(`layer${i}`, `${global.modid}:item/templates/fragment/0${i}`)
                 .color(i, color[i]);
-                gravel.texture(`layer${i}`, `emendatusenigmatica:item/templates/gravel/0${i}`)
+                gravel.texture(`layer${i}`, `${global.modid}:item/templates/gravel/0${i}`)
                 .color(i, color[i]);
             }
         }
@@ -262,13 +252,13 @@ function registryBlood(name, color) {
 
 function registryCrush(name, color) {
     StartupEvents.registry('item', (event) => {
-        let builder = event.create(`emendatusenigmatica:${name}_crushed_ore`)
+        let builder = event.create(`${global.modid}:${name}_crushed_ore`)
             .tag('create:crushed_raw_materials')
             .tag(`create:crushed_raw_materials/${name}`)
         
         if(this.color) {
             for (let i = 0; i < color.length; i++) {
-                builder.texture(`layer${i}`, `emendatusenigmatica:item/templates/crushed_ore/0${i}`)
+                builder.texture(`layer${i}`, `${global.modid}:item/templates/crushed_ore/0${i}`)
                 .color(i, color[i]);
             };
         }
