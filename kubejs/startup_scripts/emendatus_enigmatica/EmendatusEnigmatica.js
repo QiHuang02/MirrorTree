@@ -31,9 +31,9 @@ EmendatusEnigmaticaJS.prototype = {
 
         processedTypes.forEach((ptypes) => {
             switch(ptypes) {
-                case 'ore':
-                    registryOre(name, strata, harvestLevel, color, type, drop);
-                    break;
+                // case 'ore':
+                //     registryOre(name, strata, harvestLevel, color, type, drop);
+                //     break;
                 case 'raw':
                     registryRaw(name,color);
                     break;
@@ -88,7 +88,17 @@ function registryOre(name, strata, harvestLevel, color, type, drop) {
             .tagBlock(`minecraft:needs_${harvestLevel}_tool`)
             .tagBoth(`c:ores_in_ground/${strata}`)
             if(color) {
-                createModelOre(name, strata, type);
+                // createModelOre(name, strata, type);
+                for (let i = 0; i < color.length; i++) {
+                    switch(type) {
+                        case 'metal':
+                            ore.texture(`layer${i}`, `${global.modid}:block/templates/ore/metal/0${i}`)
+                            break;
+                        case 'gem':
+                            ore.texture(`layer${i}`, `${global.modid}:block/templates/ore/gem/0${i}`)
+                            break;
+                    }
+                }
             }
             createLootOre(name, strata, drop);
         })
@@ -114,7 +124,8 @@ function registryRaw(name, color) {
             }
     });
     StartupEvents.registry('block', (event) => {
-        event.create(`emendatusenigmatica:raw_${name}_block`)
+        let builder = event.create(`emendatusenigmatica:raw_${name}_block`)
+            .texture(`${global.modid}:block/overlays/raw_${name}_block`)
             .tagBoth('c:storage_blocks')
             .tagBoth(`c:storage_blocks/raw_${name}`)
             .tagBlock('minecraft:mineable/pickaxe')
@@ -164,8 +175,8 @@ function registryWithBlock(type, name, color, burnTime, gemTemplate, processedTy
     )
     if (processedTypes.includes('storage_block')){
         StartupEvents.registry('block', (event) => {
-            let builder = event
-                .create(`emendatusenigmatica:${name}_block`)
+            let builder = event.create(`emendatusenigmatica:${name}_block`)
+                .texture(`${global.modid}:block/overlays/${name}_block`)
                 .tagBoth('c:storage_blocks')
                 .tagBoth(`c:storage_blocks/${name}`)
                 .tagBlock('minecraft:mineable/pickaxe')

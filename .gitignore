@@ -19,3 +19,4 @@ test.*
 emi.json
 /kubejs/assets/emendatusenigmatica/models/block/*.json
 /kubejs/data/emendatusenigmatica/loot_table/blocks/*.json
+/kubejs/config/probe-settings.json
