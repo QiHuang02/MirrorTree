@@ -30,6 +30,6 @@
 	library_list = []
 
 [count]
-	count_hidden_mods = true
-	count_children = true
-	count_libraries = true
+	count_hidden_mods = false
+	count_children = false
+	count_libraries = false
