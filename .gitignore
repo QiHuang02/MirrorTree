@@ -1,13 +1,14 @@
 
 .probe
 .vscode
-/downloads
-/local
-/logs
-MirrorTree*
-/mods
+downloads/
+local/
+logs/
+MirrorTree-*
+MirrorTree.*
+mods/
 patchouli_*
-/PCL
+PCL/
 resourcepacks
 saves
 simplebackups
@@ -17,6 +18,10 @@ command_history.txt
 Dramatic Skys Demo
 test.*
 emi.json
-/kubejs/assets/emendatusenigmatica/models/block/*.json
-/kubejs/data/emendatusenigmatica/loot_table/blocks/*.json
-/kubejs/config/probe-settings.json
+kubejs/assets/emendatusenigmatica/models/block/*.json
+kubejs/data/emendatusenigmatica/loot_table/blocks/*.json
+crash-reports/crash-*.txt
+natives-windows-x86_64/
+hmclversion.cfg
+log4j2.xml
+shaderpacks/
