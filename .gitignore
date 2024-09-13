@@ -25,3 +25,9 @@ natives-windows-x86_64/
 hmclversion.cfg
 log4j2.xml
 shaderpacks/
+kubejs/config/
+config/
+!config/almostunified/
+!config/jade/
+!config/lighty/
+!config/sounds/
