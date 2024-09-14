@@ -24,5 +24,6 @@ hmclversion.cfg
 log4j2.xml
 shaderpacks
 config/jei/
+kubejs/config/*.json
 StellarisSpace.*
 StellarisSpace-*
