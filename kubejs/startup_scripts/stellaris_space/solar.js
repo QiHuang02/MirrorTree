@@ -1,5 +1,5 @@
 StartupEvents.registry('block', (event) => {
-    event.create('stellaris_space:solar_panel')
+    event.create('stellaris_space:solar_panel', 'cardinal')
     .parentModel('stellaris_space:block/solar_panel')
     .translationKey('block.stellaris_space.solar_panel')
     .hardness(2)
@@ -11,14 +11,8 @@ StartupEvents.registry('block', (event) => {
     .suffocating(false)
     .viewBlocking(true)
     .blockEntity((entityInfo) => {
-        entityInfo.energyStorage('energy', [], 2147483647, 0, 10000, 1000)
+        entityInfo.energyStorage('energy', [], 2147483647, 0, 10000, 0)
         entityInfo.serverTicking()
         entityInfo.tickFrequency(20)
     })
 })
-
-// PowerfulEvents.registerCapabilities((event) => {
-//     event.registerBlockEntity('powerfuljs:fixed_storage_fe', {
-//         capacity: 2147483647
-//     }, 'stellaris_space:solar_panel')
-// })
