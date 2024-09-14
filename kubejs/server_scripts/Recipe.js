@@ -1,34 +1,4 @@
 ServerEvents.recipes((event) => {
-    const patterns = {
-        full: [
-            "AAA",
-            "AAA",
-            "AAA"
-        ],
-        gear: [
-            " A ",
-            "ABA",
-            " A "
-        ],
-        plate: [
-            "AA"
-        ]
-    } 
-
-    function shaped(result, patternType, input) {
-        let pattern = patterns[patternType];
-        let x = { A: input };
-        if(!pattern) {
-            console.log(`Invalid pattern type: ${patternType}`);
-            return;
-        }
-        event.recipes.kubejs.shaped(
-            result,
-            pattern,
-            x
-        )
-    }
-
     // Remove recipe
     const recipetype = [
         "minecraft:stonecutting",
