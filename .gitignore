@@ -23,10 +23,6 @@ natives-windows-x86_64
 hmclversion.cfg
 log4j2.xml
 shaderpacks
-config
-!config/almostunified
-!config/jade
-!config/lighty
-!config/sounds
+config/jei/
 StellarisSpace.*
 StellarisSpace-*

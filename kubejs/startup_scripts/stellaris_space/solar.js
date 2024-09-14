@@ -11,7 +11,7 @@ StartupEvents.registry('block', (event) => {
     .suffocating(false)
     .viewBlocking(true)
     .blockEntity((entityInfo) => {
-        entityInfo.energyStorage('energy', ['up'], 2147483647, 0, 10000, 1000)
+        entityInfo.energyStorage('energy', [], 2147483647, 0, 10000, 1000)
         entityInfo.serverTicking()
         entityInfo.tickFrequency(20)
     })
