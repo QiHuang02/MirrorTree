@@ -1,6 +1,6 @@
-# MirrorTree
+# Stellaris:Space
 
-我的世界模组包 MirrorTree，用于存放该模组包的KubeJS脚本和模组设置。
+我的世界模组包 Stellaris:Space，用于存放该模组包的KubeJS脚本和模组设置。
 
 ## License
 本模组包纹理来自于模组 [Emendatus Enigmatica](https://www.curseforge.com/minecraft/mc-mods/emendatus-enigmatica) 
