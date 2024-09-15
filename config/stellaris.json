@@ -4,7 +4,7 @@
     "description": "Burn time for neptunium ingot in Radioactive Generator"
   },
   "customSky": {
-    "value": true,
+    "value": false,
     "description": "Render custom sky on planet"
   },
   "plutoniumBurnTime": {

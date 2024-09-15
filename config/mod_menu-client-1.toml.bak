@@ -1,5 +1,3 @@
-mod_badges = []
-
 [main]
 	#Allowed Values: ASCENDING, DESCENDING
 	sorting = "ASCENDING"
@@ -30,7 +28,6 @@ mod_badges = []
 	hidden_mods = []
 	hidden_configs = []
 	library_list = []
-	hide_badge_buttons = true
 
 [count]
 	count_hidden_mods = true
