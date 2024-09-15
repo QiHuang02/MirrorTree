@@ -1,3 +1,5 @@
+Platform.setModName('stellaris_space', 'Stellaris Space')
+
 StartupEvents.registry('block', (event) => {
     event.create('stellaris_space:solar_panel', 'cardinal')
     .parentModel('stellaris_space:block/solar_panel')
