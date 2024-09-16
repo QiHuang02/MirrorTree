@@ -26,7 +26,7 @@ ServerEvents.recipes((event) => {
         ["cobblestone", "#c:cobblestones", null, null],
         ["iron", "#c:ingots/iron", null, null],
         ["diamond", "#c:gems/diamond", null, null],
-        ["netherite", "#c:ingots/netherite", "minecraft:netherite_upgrade_smithing_template", "#kubejs:hammer/diamond"]
+        ["netherite", "#c:ingots/netherite", "minecraft:netherite_upgrade_smithing_template", `#${global.packid}:hammer/diamond`]
     ]
 
     hammer.forEach(([
@@ -37,14 +37,14 @@ ServerEvents.recipes((event) => {
     ]) => {
         if (template != null && base != null) {
             event.smithing(
-                "kubejs:" + name + "_hammer", // 输出物品
+                Item.of(`${global.packid}:${name}_hammer`, 1), // 输出物品
                 template, // 锻造模板
                 base, // 被升级的物品
                 material // 升级材料
             )
         } else {
             event.recipes.kubejs.shaped(
-                Item.of("kubejs:" + name + "_hammer", 1),
+                Item.of(`${global.packid}:${name}_hammer`, 1),
                 [
                     " AB",
                     " BA",
@@ -66,7 +66,7 @@ ServerEvents.recipes((event) => {
     );
     event.smithing(
         'pipez:infinity_upgrade',
-        'kubejs:infinity_upgrade_smithing_template',
+        `${global.packid}:infinity_upgrade_smithing_template`,
         'pipez:ultimate_upgrade',
         'minecraft:nether_star'
     )
