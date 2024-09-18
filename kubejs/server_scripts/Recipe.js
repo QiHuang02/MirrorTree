@@ -39,7 +39,7 @@ ServerEvents.recipes((event) => {
             event.smithing(
                 Item.of(`${global.packid}:${name}_hammer`, 1), // 输出物品
                 template, // 锻造模板
-                base, // 被升级的物品
+                base, // 输入物品
                 material // 升级材料
             )
         } else {
