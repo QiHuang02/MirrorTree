@@ -31,9 +31,9 @@ EmendatusEnigmaticaJS.prototype = {
 
         processedTypes.forEach((ptypes) => {
             switch(ptypes) {
-                // case 'ore':
-                //     registryOre(name, strata, harvestLevel, color, type, drop);
-                //     break;
+                case 'ore':
+                    registryOre(name, strata, harvestLevel, color, type, drop);
+                    break;
                 case 'raw':
                     registryRaw(name,color);
                     break;
@@ -62,7 +62,6 @@ EmendatusEnigmaticaJS.prototype = {
     }
 };
 
-
 /**
  * Description placeholder
  *
@@ -87,9 +86,11 @@ function registryOre(name, strata, harvestLevel, color, type, drop) {
             .tagBlock(`c:mineable/paxel`)
             .tagBlock(`minecraft:needs_${harvestLevel}_tool`)
             .tagBoth(`c:ores_in_ground/${strata}`)
-            .modelGenerator(model => {
+            .modelGenerator((model) => {
                 model.parent(`${global.EE_STRATAS[strata].texture}`)
+                // model.texture('layer0', `${global.modid}:block/overlays/raw_${name}_block`)
             })
+            // createModelOre(name, strata);
             createLootOre(name, strata, drop);
         })
     })
