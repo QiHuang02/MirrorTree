@@ -13,11 +13,13 @@ BlockEvents.blockEntityTick('stellaris_space:solar_panel', (event) => {
 })
 
 BlockEvents.rightClicked('stellaris_space:solar_panel', (event) => {
+    let name = event.player.getName();
     let handItem = event.player.mainHandItem;
     let cap = event.block.entity.attachments.energy.energyStored;
     
     if(event.hand != "MAIN_HAND") return;
     if(handItem == 'mekanism:configurator') {
-        event.player.runCommandSilent(`title @s actionbar [{"text":"MaxEnergy: ","color":"#55FF55"},{"text":"${cap}","color":"#FFAA00"}]`)
+        // event.player.tell(`Player Name: ${name[2]}`);
+        event.player.runCommandSilent(`title @s actionbar [{"text":"MaxEnergy: ","color":"#55FF55"},{"text":" ${cap}","color":"#FFAA00"}]`)
     };
 })
