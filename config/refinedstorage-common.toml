@@ -1,0 +1,180 @@
+#Allowed Values: STRETCH, SMALL, MEDIUM, LARGE, EXTRA_LARGE
+screenSize = "STRETCH"
+smoothScrolling = true
+#Range: 3 ~ 256
+maxRowsStretch = 256
+
+[cable]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 0
+
+[controller]
+	#Range: 0 ~ 9223372036854775807
+	energyCapacity = 1000
+
+[diskDrive]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 10
+	#Range: 0 ~ 9223372036854775807
+	energyUsagePerDisk = 4
+
+[diskInterface]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 6
+	#Range: 0 ~ 9223372036854775807
+	energyUsagePerDisk = 4
+
+[grid]
+	largeFont = false
+	preventSortingWhileShiftIsDown = true
+	detailedTooltip = true
+	rememberSearchQuery = false
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 10
+	autoSelected = false
+	synchronizer = ""
+	resourceType = ""
+	#Allowed Values: ASCENDING, DESCENDING
+	sortingDirection = "ASCENDING"
+	#Allowed Values: QUANTITY, NAME, ID, LAST_MODIFIED
+	sortingType = "QUANTITY"
+
+[craftingGrid]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 14
+	#Allowed Values: NONE, CLEAR_TO_NETWORK, CLEAR_TO_INVENTORY
+	craftingMatrixCloseBehavior = "NONE"
+
+[patternGrid]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 14
+
+[storageBlock]
+	#Range: 0 ~ 9223372036854775807
+	1kEnergyUsage = 2
+	#Range: 0 ~ 9223372036854775807
+	4kEnergyUsage = 4
+	#Range: 0 ~ 9223372036854775807
+	16kEnergyUsage = 6
+	#Range: 0 ~ 9223372036854775807
+	64kEnergyUsage = 8
+	#Range: 0 ~ 9223372036854775807
+	creativeEnergyUsage = 16
+
+[fluidStorageBlock]
+	#Range: 0 ~ 9223372036854775807
+	64bEnergyUsage = 2
+	#Range: 0 ~ 9223372036854775807
+	256bEnergyUsage = 4
+	#Range: 0 ~ 9223372036854775807
+	1024bEnergyUsage = 6
+	#Range: 0 ~ 9223372036854775807
+	4096bEnergyUsage = 8
+	#Range: 0 ~ 9223372036854775807
+	creativeEnergyUsage = 16
+
+[importer]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 2
+
+[exporter]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 2
+
+[upgrade]
+	#Range: 0 ~ 9223372036854775807
+	speedUpgradeEnergyUsage = 4
+	#Range: 0 ~ 9223372036854775807
+	stackUpgradeEnergyUsage = 16
+	#Range: 0 ~ 9223372036854775807
+	fortune1UpgradeEnergyUsage = 10
+	#Range: 0 ~ 9223372036854775807
+	fortune2UpgradeEnergyUsage = 12
+	#Range: 0 ~ 9223372036854775807
+	fortune3UpgradeEnergyUsage = 14
+	#Range: 0 ~ 9223372036854775807
+	silkTouchUpgradeEnergyUsage = 16
+	#Range: 0 ~ 9223372036854775807
+	regulatorUpgradeEnergyUsage = 16
+	#Range: 0 ~ 9223372036854775807
+	rangeUpgradeEnergyUsage = 8
+	#Range: 0 ~ 9223372036854775807
+	creativeRangeUpgradeEnergyUsage = 0
+	#Range: > 0
+	rangeUpgradeRange = 8
+
+[interface]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 4
+
+[externalStorage]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 6
+
+[detector]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 2
+
+[destructor]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 3
+
+[constructor]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 3
+
+[wirelessGrid]
+	#Range: 0 ~ 9223372036854775807
+	energyCapacity = 1000
+	#Range: 0 ~ 9223372036854775807
+	openEnergyUsage = 5
+	#Range: 0 ~ 9223372036854775807
+	extractEnergyUsage = 5
+	#Range: 0 ~ 9223372036854775807
+	insertEnergyUsage = 5
+
+[wirelessTransmitter]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 16
+	#Range: > 0
+	baseRange = 16
+
+[storageMonitor]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 4
+
+[networkReceiver]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 8
+
+[networkTransmitter]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 32
+
+[portableGrid]
+	#Range: 0 ~ 9223372036854775807
+	energyCapacity = 1000
+	#Range: 0 ~ 9223372036854775807
+	openEnergyUsage = 5
+	#Range: 0 ~ 9223372036854775807
+	extractEnergyUsage = 5
+	#Range: 0 ~ 9223372036854775807
+	insertEnergyUsage = 5
+
+[securityCard]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 2
+
+[fallbackSecurityCard]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 4
+
+[securityManager]
+	#Range: 0 ~ 9223372036854775807
+	energyUsage = 16
+
+[relay]
+	#Range: 8 ~ 9223372036854775807
+	inputNetworkEnergyUsage = 8
+	#Range: 8 ~ 9223372036854775807
+	outputNetworkEnergyUsage = 8

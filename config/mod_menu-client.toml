@@ -1,11 +1,12 @@
 mod_badges = []
+mod_parents = []
 
 [main]
 	#Allowed Values: ASCENDING, DESCENDING
 	sorting = "ASCENDING"
 	compact_list = false
 	#Allowed Values: CLASSIC, REPLACE_REALMS, SHRINK, ICON
-	mods_button_style = "CLASSIC"
+	mods_button_style = "REPLACE_REALMS"
 	#Allowed Values: REPLACE, INSERT, ICON
 	game_menu_button_style = "REPLACE"
 	#Allowed Values: TITLE_SCREEN, MODS_BUTTON, TITLE_SCREEN_AND_MODS_BUTTON, NONE
@@ -33,6 +34,6 @@ mod_badges = []
 	hide_badge_buttons = true
 
 [count]
-	count_hidden_mods = true
-	count_children = true
-	count_libraries = true
+	count_hidden_mods = false
+	count_children = false
+	count_libraries = false
