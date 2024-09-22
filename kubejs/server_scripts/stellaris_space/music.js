@@ -1,3 +1,3 @@
 ServerEvents.registry('jukebox_song', (event) => {
-    event.create(`${global.packid}:cureforme`).song(`${global.packid}:cureforme`, 201)
+    event.create('stellaris_space:love_story').song('stellaris_space:love_story', 236)
 })

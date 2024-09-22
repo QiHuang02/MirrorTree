@@ -88,7 +88,11 @@ function registryOre(name, strata, harvestLevel, color, type, drop) {
             .tagBoth(`c:ores_in_ground/${strata}`)
             .modelGenerator((model) => {
                 model.parent(`${global.EE_STRATAS[strata].texture}`)
-                // model.texture('layer0', `${global.modid}:block/overlays/raw_${name}_block`)
+                // model.texture('layer0', `${global.modid}:block/templates/${type}/00`)
+                // model.texture('layer1', `${global.modid}:block/templates/${type}/01`)
+                // model.texture('layer2', `${global.modid}:block/templates/${type}/02`)
+                // model.texture('layer3', `${global.modid}:block/templates/${type}/03`)
+                // model.texture('layer4', `${global.modid}:block/templates/${type}/04`)
             })
             // createModelOre(name, strata);
             createLootOre(name, strata, drop);

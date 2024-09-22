@@ -1,7 +1,7 @@
 StartupEvents.registry('sound_event', (event) => {
-    event.create(`${global.packid}:cureforme`)
+    event.create('stellaris_space:love_story')
 });
 StartupEvents.registry('item', (event) => {
-    event.create(`${global.packid}:cureforme`)
-    .jukeboxPlayable(`${global.packid}:cureforme`, true)
+    event.create(`stellaris_space:love_story`)
+         .jukeboxPlayable(`stellaris_space:love_story`, true)
 })

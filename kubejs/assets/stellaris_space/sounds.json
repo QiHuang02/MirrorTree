@@ -1,0 +1,10 @@
+{
+    "stellaris_space:love_story": {
+        "sounds": [
+            {
+                "name": "stellaris_space:love_story",
+                "stream": true
+            }
+        ]
+    }
+}
