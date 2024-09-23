@@ -1,4 +1,4 @@
-const $EnergyStorageAttachment$Factory = Java.loadClass(`dev.latvian.mods.kubejs.block.entity.EnergyStorageAttachment$Factory`)
+// const $EnergyStorageAttachment$Factory = Java.loadClass(`dev.latvian.mods.kubejs.block.entity.EnergyStorageAttachment$Factory`)
 
 BlockEvents.blockEntityTick('stellaris_space:solar_panel', (event) => {
     let isDay = event.level.day;
